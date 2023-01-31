@@ -9,12 +9,14 @@
     min-height: 500px;
     padding: 10px;
     margin-top: 50px;
+    height: 75vh;
 }
 
 .calculator-container {
     width: 400px;
     padding: 20px;
     border: 2px solid black;
+    border-radius: 10px;
 }
 
 .calculator-display {
@@ -22,6 +24,7 @@
     padding: 10px 20px;
     margin-bottom: 20px;
     text-align: right;
+    border-radius: 10px;
 }
 
 .previous-operand {
@@ -32,4 +35,28 @@
 .current-operand {
     min-width: 60px;
     font-size: 30px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+.buttons button {
+    padding: 20px;
+    border-radius: 100%;
+    font-size: 20px;
+}
+
+button.clear {
+    grid-column: span 2;
+    border-radius: 50px;
+}
+
+button.digit[value='0'] {
+    grid-column: span 2;
+    border-radius: 50px;
+    text-align: left;
+    padding-left: 35px;
 }
