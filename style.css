@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #DFDFDF;
+}
+
 .main {
     display: flex;
     justify-content: center;
@@ -16,7 +20,8 @@
     width: 400px;
     padding: 20px;
     border: 2px solid black;
-    border-radius: 10px;
+    border-radius: 15px;
+    background-color: #212121;
 }
 
 .calculator-display {
@@ -25,28 +30,53 @@
     margin-bottom: 20px;
     text-align: right;
     border-radius: 10px;
+    background-color: #616161;
+    color: #DFDFDF;
 }
 
 .previous-operand {
     min-width: 30px;
     font-size: 20px;
+    font-weight: 400;
 }
 
 .current-operand {
     min-width: 60px;
     font-size: 30px;
+    font-weight: 600;
 }
 
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
+    background-color: #212121;
 }
 
 .buttons button {
     padding: 20px;
-    border-radius: 100%;
+    border-radius: 50px;
     font-size: 20px;
+    background-color: #616161;
+    color: #DFDFDF;
+    font-weight: 700;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+
+.buttons button:active {
+    background-color: #616161;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+}
+
+.buttons button:hover {
+    background-color: #bdbdbd;
+    color: #000;
 }
 
 button.clear {
@@ -59,4 +89,12 @@ button.digit[value='0'] {
     border-radius: 50px;
     text-align: left;
     padding-left: 35px;
+}
+
+button.operator[value='/'],
+button.operator[value='*'],
+button.operator[value='-'],
+button.operator[value='+'],
+button.equals[value='='] {
+    background-color: #ec9e0e;
 }
