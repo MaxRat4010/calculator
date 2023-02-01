@@ -33,6 +33,7 @@ function operate (operator, num1, num2) {
 let displayValue = "";
 let firstNumber = "";
 let chosenOperator = "";
+let result = "";
 
 currentOperand.textContent = 0;
 previousOperand.textContent= 0;
@@ -49,5 +50,15 @@ operandBtns.forEach(operand => {
         firstNumber = displayValue;
         chosenOperator = operand.value
         previousOperand.textContent = firstNumber + chosenOperator
+        displayValue = "";
     })
 })
+
+equalsKey.addEventListener('click', displayResult);
+
+function displayResult() {
+    result = operate(chosenOperator, parseFloat(firstNumber), parseFloat(displayValue));
+    currentOperand.textContent = result;
+    previousOperand.textContent = firstNumber + chosenOperator + displayValue
+    displayValue = result;
+}
