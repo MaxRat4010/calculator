@@ -1,9 +1,9 @@
-const digits = document.querySelectorAll(".digit");
-const operand = document.querySelectorAll(".operator");
+const digitsBtns = document.querySelectorAll(".digit");
+const operandBtns = document.querySelectorAll(".operator");
 const equalsKey = document.querySelector(".equals");
-const previous = document.querySelector(".previous-operand");
-const current = document.querySelector(".current-operand");
-const decimal = document.querySelector(".decimal");
+const previousOperand = document.querySelector(".previous-operand");
+const currentOperand = document.querySelector(".current-operand");
+const decimalBtn = document.querySelector(".decimal");
 const clearBtn = document.querySelector(".clear");
 const deleteBtn = document.querySelector(".delete");
 
@@ -30,3 +30,13 @@ function operate (operator, num1, num2) {
     if (operator === '/') return num2 === 0 ? "Can't divide by 0" : divide(num1,num2);
 }
 
+let displayValue = "";
+currentOperand.textContent = 0;
+previousOperand.textContent= 0;
+
+digitsBtns.forEach(digit => {
+    digit.addEventListener('click', () => {
+        displayValue += digit.value;
+        currentOperand.textContent = displayValue
+    });
+});
