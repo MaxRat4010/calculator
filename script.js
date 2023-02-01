@@ -31,6 +31,9 @@ function operate (operator, num1, num2) {
 }
 
 let displayValue = "";
+let firstNumber = "";
+let chosenOperator = "";
+
 currentOperand.textContent = 0;
 previousOperand.textContent= 0;
 
@@ -40,3 +43,11 @@ digitsBtns.forEach(digit => {
         currentOperand.textContent = displayValue
     });
 });
+
+operandBtns.forEach(operand => {
+    operand.addEventListener('click', () => {
+        firstNumber = displayValue;
+        chosenOperator = operand.value
+        previousOperand.textContent = firstNumber + chosenOperator
+    })
+})
