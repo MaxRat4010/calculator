@@ -1,3 +1,12 @@
+const digits = document.querySelectorAll(".digit");
+const operand = document.querySelectorAll(".operator");
+const equalsKey = document.querySelector(".equals");
+const previous = document.querySelector(".previous-operand");
+const current = document.querySelector(".current-operand");
+const decimal = document.querySelector(".decimal");
+const clearBtn = document.querySelector(".clear");
+const deleteBtn = document.querySelector(".delete");
+
 function add (a,b) {
     return a + b;
 };
@@ -20,4 +29,4 @@ function operate (operator, num1, num2) {
     if (operator === '*') return multiply(num1,num2);
     if (operator === '/') return num2 === 0 ? "Can't divide by 0" : divide(num1,num2);
 }
-// console.log (operate('/',20,4))
+
