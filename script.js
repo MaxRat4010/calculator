@@ -47,9 +47,12 @@ digitsBtns.forEach(digit => {
 
 operandBtns.forEach(operand => {
     operand.addEventListener('click', () => {
+        if (firstNumber && displayValue) {
+            displayResult();
+        }
         firstNumber = displayValue;
         chosenOperator = operand.value
-        previousOperand.textContent = firstNumber + chosenOperator
+        previousOperand.textContent = firstNumber + ' ' + chosenOperator
         displayValue = "";
     })
 })
@@ -59,6 +62,6 @@ equalsKey.addEventListener('click', displayResult);
 function displayResult() {
     result = operate(chosenOperator, parseFloat(firstNumber), parseFloat(displayValue));
     currentOperand.textContent = result;
-    previousOperand.textContent = firstNumber + chosenOperator + displayValue
+    previousOperand.textContent = firstNumber + ' ' + chosenOperator + ' ' + displayValue
     displayValue = result;
 }
