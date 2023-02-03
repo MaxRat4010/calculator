@@ -45,6 +45,11 @@ digitsBtns.forEach(digit => {
     });
 });
 
+decimalBtn.addEventListener('click', () => {
+    displayValue += decimalBtn.value;
+    currentOperand.textContent = displayValue;
+});
+
 operandBtns.forEach(operand => {
     operand.addEventListener('click', () => {
         if (firstNumber && displayValue) {
