@@ -61,7 +61,7 @@ equalsKey.addEventListener('click', displayResult);
 
 function displayResult() {
     result = operate(chosenOperator, parseFloat(firstNumber), parseFloat(displayValue));
-    currentOperand.textContent = result;
+    currentOperand.textContent = result.toFixed(7);
     previousOperand.textContent = firstNumber + ' ' + chosenOperator + ' ' + displayValue
     displayValue = result;
 }
