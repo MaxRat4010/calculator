@@ -59,9 +59,17 @@ operandBtns.forEach(operand => {
 
 equalsKey.addEventListener('click', displayResult);
 
+function roundNum(num) {
+    if (Number.isInteger(num) == false) {
+        return Math.round(num * 1000) / 1000
+    } else {
+        return num
+    };
+};
+
 function displayResult() {
     result = operate(chosenOperator, parseFloat(firstNumber), parseFloat(displayValue));
-    currentOperand.textContent = result.toFixed(7);
+    currentOperand.textContent = roundNum(result);
     previousOperand.textContent = firstNumber + ' ' + chosenOperator + ' ' + displayValue
     displayValue = result;
 }
