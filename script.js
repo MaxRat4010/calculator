@@ -69,6 +69,11 @@ clearBtn.addEventListener('click', () => {
     currentOperand.textContent = 0; 
 })
 
+deleteBtn.addEventListener('click', () => {
+    currentOperand.textContent = currentOperand.textContent.slice(0, -1);
+    displayValue = currentOperand.textContent
+})
+
 equalsKey.addEventListener('click', displayResult);
 
 function roundNum(num) {
