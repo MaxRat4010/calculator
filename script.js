@@ -36,7 +36,7 @@ let chosenOperator = "";
 let result = "";
 
 currentOperand.textContent = 0;
-previousOperand.textContent= 0;
+previousOperand.textContent= "";
 
 digitsBtns.forEach(digit => {
     digit.addEventListener('click', () => {
@@ -65,7 +65,7 @@ operandBtns.forEach(operand => {
 clearBtn.addEventListener('click', () => {
     displayValue = "";
     firstNumber = "";
-    previousOperand.textContent = 0;
+    previousOperand.textContent = "";
     currentOperand.textContent = 0; 
 })
 
