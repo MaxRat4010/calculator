@@ -39,12 +39,14 @@ body {
     min-width: 30px;
     font-size: 20px;
     font-weight: 400;
+    min-height: 23.200px;
 }
 
 .current-operand {
     min-width: 60px;
     font-size: 30px;
     font-weight: 600;
+    min-height: 34.400px;
 }
 
 .buttons {
