@@ -27,7 +27,7 @@ function operate (operator, num1, num2) {
     if (operator === '+') return add(num1,num2);
     if (operator === '-') return subtract(num1,num2);
     if (operator === '*') return multiply(num1,num2);
-    if (operator === '/') return num2 === 0 ? "Can't divide by 0" : divide(num1,num2);
+    if (operator === '/') return num2 === 0 ? "" : divide(num1,num2);
 }
 
 let displayValue = "";
@@ -85,8 +85,12 @@ function roundNum(num) {
 };
 
 function displayResult() {
+    if (chosenOperator === '/' && displayValue === '0') {
+        alert( "can't divide by 0!!")
+    } else {
     result = operate(chosenOperator, parseFloat(firstNumber), parseFloat(displayValue));
     currentOperand.textContent = roundNum(result);
     previousOperand.textContent = firstNumber + ' ' + chosenOperator + ' ' + displayValue
     displayValue = result;
-}
+    };
+};
