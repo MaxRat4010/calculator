@@ -46,6 +46,7 @@ digitsBtns.forEach(digit => {
 });
 
 decimalBtn.addEventListener('click', () => {
+    if (currentOperand.textContent.includes('.')) return
     displayValue += decimalBtn.value;
     currentOperand.textContent = displayValue;
 });
