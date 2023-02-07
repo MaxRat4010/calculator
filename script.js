@@ -87,6 +87,8 @@ function roundNum(num) {
 function displayResult() {
     if (chosenOperator === '/' && displayValue === '0') {
         alert( "can't divide by 0!!")
+    } else if (firstNumber == "" || displayValue == "") {
+        return;
     } else {
     result = operate(chosenOperator, parseFloat(firstNumber), parseFloat(displayValue));
     currentOperand.textContent = roundNum(result);
